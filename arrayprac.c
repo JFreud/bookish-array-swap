@@ -16,9 +16,12 @@ int main(){
     printf("arr[%d]: %d\n", i, arr[i]);
   }
   int pirate[10];
+  int *p = arr;
+  int *p2 = pirate + 9;
   for (i = 0; i < 10; i++) {
-    int *p = &pirate[9 - i];
-    *p = arr[i];
+    *p2 = *p;
+    p++;
+    p2--;
   }
   printf("My second array:\n");
   for (i = 0; i < 10; i++){
